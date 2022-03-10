@@ -146,7 +146,7 @@ public class MapCommand implements CommandExecutor {
                 throwables.printStackTrace();
             }
             p.sendMessage(fb.getString("prefix") + "  Your region was created successfully and is now visible on the map.");
-            p.sendMessage(fb.getString("prefix") + "  You can see your region by clicking on this link: https://map.bte-germany.de/region/" + reg.getUid());
+            p.sendMessage(fb.getString("prefix") + "  You can see your region by clicking on this link: https://map.buildtheearth.asia/region/" + reg.getUid());
         });
 
 
