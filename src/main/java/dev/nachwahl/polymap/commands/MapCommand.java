@@ -90,7 +90,7 @@ public class MapCommand implements CommandExecutor {
 
 
         try {
-            url = new URL("https://nominatim.openstreetmap.org/reverse.php?osm_type=N&format=json&zoom=18&lon=" + this.lon + "&accept-language=de&lat=" + this.lat);
+            url = new URL("https://nominatim.openstreetmap.org/reverse.php?osm_type=N&format=json&zoom=18&lon=" + this.lon + "&accept-language=en&lat=" + this.lat);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestProperty("accept", "application/json");
             Reader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
