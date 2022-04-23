@@ -78,8 +78,8 @@ public class MySQL {
 
     }
 
-    public static void createRegion(Region region) throws SQLException {
-        PreparedStatement ps = getConnection().prepareStatement("INSERT INTO regions (createdDate, uid, username, useruuid, data, city, area) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    public static void createRegion(Region region, int count, String georegion, String subregion, String type) throws SQLException {
+        PreparedStatement ps = getConnection().prepareStatement("INSERT INTO regions (createdDate, uid, username, useruuid, data, city, area, region, subregion, type, count) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         ps.setTimestamp(1, new Timestamp(region.getCreatedDate().getTime()));
         ps.setString(2, region.getUid().toString());
         ps.setString(3, region.getUsername());
@@ -87,6 +87,10 @@ public class MySQL {
         ps.setString(5, region.getData());
         ps.setString(6, region.getCity());
         ps.setInt(7, region.getArea());
+        ps.setString(8, georegion);
+        ps.setString(9, subregion);
+        ps.setString(10, type);
+        ps.setInt(11, count);
         ps.executeUpdate();
     }
 
