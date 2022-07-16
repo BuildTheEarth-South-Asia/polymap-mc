@@ -148,7 +148,7 @@ public class MapCommand implements CommandExecutor {
 
             if (trueArgs.length == 4) {
                 String possibleType = trueArgs[2].toUpperCase(Locale.ROOT);
-                if (possibleType.equals("F") || possibleType.equals("D") || possibleType.equals("W") || possibleType.equals("L")) {
+                if (possibleType.length() == 1 || possibleType.length() == 2) {
                     type = possibleType;
                 }
                 else subregion = trueArgs[2];
@@ -157,7 +157,7 @@ public class MapCommand implements CommandExecutor {
             if (trueArgs.length == 5) {
                 subregion = trueArgs[2];
                 String possibleType = trueArgs[3].toUpperCase(Locale.ROOT);
-                if (possibleType.equals("F") || possibleType.equals("D") || possibleType.equals("W") || possibleType.equals("L")) {
+                if (possibleType.length() == 1 || possibleType.length() == 2) {
                     type = possibleType;
                 } else {
                     p.sendMessage(fb.getString("prefix") + " Invalid Argument for type");
